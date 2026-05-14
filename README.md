@@ -154,7 +154,7 @@ A matriz de confusão obtida para o modelo Random Forest apresentou:
 ## 1. Clonar o Repositório
 
 ```bash
-git clone https://github.com/seuusuario/predictive-maintenance-ml.git
+git clone https://github.com/emanueljn/predictive-maintenance-ml.git
 ```
 
 ---

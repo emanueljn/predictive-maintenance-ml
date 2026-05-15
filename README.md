@@ -265,14 +265,15 @@ Responsável por:
 
 # Autor
 
-Alex de Almeida Cruz
-Emanuel de Jesus Nardes 
-José Edinaldo da Silva Junior
-Leandro de Jesus Vitorino dos Santos
-Robson dos Santos
-Sarah Aparecida Valeriano Rodrigues Silva 
-Victor Luis Gama Rodrigues
-Willian Claudio Ferreira
+- Alex de Almeida Cruz;
+- Emanuel de Jesus Nardes;
+- José Edinaldo da Silva Junior;
+- Leandro de Jesus Vitorino dos Santos;
+- Robson dos Santos;
+- Sarah Aparecida Valeriano;
+- Rodrigues Silva;
+- Victor Luis Gama Rodrigues;
+- Willian Claudio Ferreira.
 
 
 Trabalho de Conclusão de Curso – Engenharia de Computação pela UNIVESP – Universidade Virtual do Estado de São Paulo

@@ -4,11 +4,13 @@ from sklearn.metrics import (
     confusion_matrix,
     ConfusionMatrixDisplay
 )
+
+from src.treinamento import pred_lr
 from treinamento import (
     modelo_rf,
     X_test,
     y_test,
-    pred_rf
+    pred_rf, pred_mlp, tempo_pred_lr
 )
 
 # AMOSTRAS
@@ -58,7 +60,27 @@ taxa = acertos / len(y_real)
 
 print(f'\\nTaxa de acerto: {taxa:.2%}')
 
-# MATRIZ DE CONFUSÃO
+# MATRIZ DE CONFUSÃO - REGRESSÃO LOGÍSTICA
+
+matriz = confusion_matrix(y_test, pred_lr)
+
+print('\n===== MATRIZ DE CONFUSÃO =====')
+
+print(matriz)
+
+disp = ConfusionMatrixDisplay(
+    confusion_matrix=matriz,
+    display_labels=[
+        'Sem Falha',
+        'Falha'
+    ]
+)
+
+disp.plot(cmap='Blues')
+
+plt.show()
+
+# MATRIZ DE CONFUSÃO - RAMDOM FOREST
 matriz = confusion_matrix(y_test, pred_rf)
 
 print('\\n===== MATRIZ DE CONFUSÃO =====')
@@ -77,8 +99,24 @@ disp = ConfusionMatrixDisplay(
 
 disp.plot(cmap='Blues')
 
-plt.title(
-    'Matriz de Confusão - Random Forest'
+plt.show()
+
+# MATRIZ DE CONFUSÃO - MULTILAYER PERCEPTRON
+
+matriz = confusion_matrix(y_test, pred_mlp)
+
+print('\n===== MATRIZ DE CONFUSÃO =====')
+
+print(matriz)
+
+disp = ConfusionMatrixDisplay(
+    confusion_matrix=matriz,
+    display_labels=[
+        'Sem Falha',
+        'Falha'
+    ]
 )
+
+disp.plot(cmap='Blues')
 
 plt.show()

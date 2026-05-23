@@ -14,10 +14,7 @@ print(df.isnull().sum())
 
 df = df.fillna(df.median(numeric_only=True))
 
-# -----------------------------------------------------------------
-# REMOÇÃO DE COLUNAS DE IDENTIFICAÇÃO E TIPOS DE FALHA (CRUCIAL!)
-# -----------------------------------------------------------------
-# Removemos UDI, Product ID e os tipos específicos de falha para evitar Data Leakage
+# Remove UDI, Product ID e os tipos específicos de falha para evitar Data Leakage
 colunas_para_remover = ['UDI', 'Product ID', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
 df = df.drop(columns=[col for col in colunas_para_remover if col in df.columns])
 
@@ -27,8 +24,6 @@ if 'Type' in df.columns:
     df['Type'] = encoder.fit_transform(df['Type'])
 
 # ANÁLISE E TRATAMENTO DE OUTLIERS
-# Nota para o TCC: Em manutenção preditiva, remover outliers agressivamente
-# pode apagar os dados de falha. Vamos manter os dados como estão para o modelo aprender os extremos.
 plt.figure(figsize=(12, 6))
 df.boxplot()
 plt.xticks(rotation=45)
@@ -66,7 +61,6 @@ X_test_scaled = scaler.transform(X_test)
 print('\nNormalização concluída.')
 
 # EXPORTAÇÃO DOS DADOS PROCESSADOS
-# CORREÇÃO: Mantendo os nomes originais das colunas em 'columns=X.columns'
 X_train_df = pd.DataFrame(X_train_scaled, columns=X.columns)
 X_val_df = pd.DataFrame(X_val_scaled, columns=X.columns)
 X_test_df = pd.DataFrame(X_test_scaled, columns=X.columns)

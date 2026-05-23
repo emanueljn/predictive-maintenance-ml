@@ -98,15 +98,12 @@ disp = ConfusionMatrixDisplay(
 )
 
 disp.plot(cmap='Blues')
-
 plt.show()
 
 # MATRIZ DE CONFUSÃO - MULTILAYER PERCEPTRON
-
 matriz = confusion_matrix(y_test, pred_mlp)
 
 print('\n===== MATRIZ DE CONFUSÃO =====')
-
 print(matriz)
 
 disp = ConfusionMatrixDisplay(
@@ -116,7 +113,5 @@ disp = ConfusionMatrixDisplay(
         'Falha'
     ]
 )
-
 disp.plot(cmap='Blues')
-
 plt.show()

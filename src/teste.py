@@ -10,7 +10,7 @@ from treinamento import (
     modelo_rf,
     X_test,
     y_test,
-    pred_rf, pred_mlp, tempo_pred_lr
+    pred_rf, pred_mlp
 )
 
 # AMOSTRAS
